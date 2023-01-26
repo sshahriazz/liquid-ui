@@ -1,0 +1,14 @@
+{
+  "name": "liquid-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i style.css -o ./output.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
