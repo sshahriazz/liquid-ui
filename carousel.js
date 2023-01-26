@@ -1,30 +1,4 @@
-function create({
-  tag,
-  appendTo,
-  children = [],
-  attributes = {},
-  events = {},
-}) {
-  const element = document.createElement(tag);
-
-  Object.entries(attributes).forEach(([key, value]) => {
-    element[key] = value;
-  });
-
-  Object.entries(events).forEach(([key, value]) => {
-    element.addEventListener(key, value);
-  });
-
-  if (appendTo) {
-    appendTo.appendChild(element);
-  }
-
-  children.forEach((child) => element.appendChild(child));
-
-  return element;
-}
-const gridContainer = document.getElementById("grid");
-
+const slidesContainer = document.getElementById("mySwiper");
 for (let i = 0; i < 4; i++) {
   const profilePhoto = create({
     tag: "img",
@@ -34,7 +8,6 @@ for (let i = 0; i < 4; i++) {
       alt: "profile photo",
     },
   });
-
   const profileDescription = create({
     tag: "div",
     attributes: { className: "inline-block" },
@@ -52,7 +25,6 @@ for (let i = 0; i < 4; i++) {
       }),
     ],
   });
-
   const facebookIcon = create({
     tag: "img",
     attributes: {
@@ -111,12 +83,36 @@ for (let i = 0; i < 4; i++) {
     attributes: { className: "flex justify-start gap-5 items-center" },
     children: [likesCount, commentsCount],
   });
-
   const card = create({
     tag: "div",
-    attributes: { id: "grid", className: "border w-1/4" },
+    attributes: { id: "grid", className: "border swiper-slide w-1/4" },
     children: [coverImage, profile, caption, interactionCounter],
   });
-
-  gridContainer.appendChild(card);
+  slidesContainer.appendChild(card);
+  console.log(card, "card");
 }
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: 4,
+  spaceBetween: 30,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  //   scrollbar: {
+  //     el: ".swiper-scrollbar",
+  //   },
+});
+console.log(swiper, "swiper");
