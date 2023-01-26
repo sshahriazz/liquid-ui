@@ -41,13 +41,13 @@ for (let i = 0; i < 4; i++) {
     children: [
       create({
         tag: "h1",
-        attributes: { className: "text-xl", textContent: "John Doe" },
+        attributes: { className: "text-base font-bold", textContent: "Fashion items-center Everyday" },
       }),
       create({
         tag: "p",
         attributes: {
-          className: "text-sm text-gray-500",
-          textContent: "Lorem ipsum dolor .",
+          className: "text-xs text-gray-500 font-semibold",
+          textContent: "2 days ago",
         },
       }),
     ],
@@ -63,31 +63,31 @@ for (let i = 0; i < 4; i++) {
   });
   const flexIn = create({
     tag: "div",
-    attributes: { className: "flex justify-start gap-3 items-center" },
+    attributes: { className: "flex justify-start gap-3 items-center " },
     children: [profilePhoto, profileDescription],
   });
   const profile = create({
     tag: "div",
-    attributes: { className: "flex justify-between items-center" },
+    attributes: { className: "flex justify-between items-center pt-8" },
     children: [flexIn, facebookIcon],
   });
   const coverImage = create({
     tag: "img",
     attributes: {
-      className: "w-full h-64 object-cover",
+      className: "w-full h-64 object-cover rounded-xl",
       src: "https://via.placeholder.com/150",
       alt: "cover image",
     },
   });
   const caption = create({
     tag: "div",
-    attributes: { className: "flex justify-between items-center" },
+    attributes: { className: "flex justify-between items-center py-4" },
     children: [
       create({
         tag: "p",
         attributes: {
-          className: "text-sm text-gray-800",
-          textContent: "Lorem ipsum dolor . Lorem ipsum dolor .",
+          className: "text-xs text-gray-800",
+          textContent: "Facebook is showing information to help you better understand.",
         },
       }),
     ],
@@ -96,14 +96,14 @@ for (let i = 0; i < 4; i++) {
     tag: "p",
     attributes: {
       textContent: "1.2k Likes",
-      className: "text-sm text-gray-800",
+      className: "text-sm text-gray-500 font-semibold",
     },
   });
   const commentsCount = create({
     tag: "p",
     attributes: {
       textContent: "1.5k Comments",
-      className: "text-sm text-gray-800",
+      className: "text-sm text-gray-500 font-semibold",
     },
   });
   const interactionCounter = create({
@@ -114,7 +114,7 @@ for (let i = 0; i < 4; i++) {
 
   const card = create({
     tag: "div",
-    attributes: { id: "grid", className: "border w-1/4" },
+    attributes: { id: "grid", className: "rounded-xl w-1/4 p-4 shadow-md" },
     children: [coverImage, profile, caption, interactionCounter],
   });
 
