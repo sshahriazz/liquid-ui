@@ -41,7 +41,7 @@ for (let i = 0; i < 4; i++) {
     children: [
       create({
         tag: "h1",
-        attributes: { className: "text-base font-bold", textContent: "Fashion items-center Everyday" },
+        attributes: { className: "text-base font-bold", textContent: "Fashion Everyday" },
       }),
       create({
         tag: "p",
